@@ -1,12 +1,13 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Questoes { 
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		q24();
+		q30();
 	}
 	
 	static void q1 () {
@@ -281,5 +282,85 @@ public class Questoes {
 		if (media < 6) System.out.println("Reprovado");
 		else System.out.println("Aprovado");
 		System.out.println("Media: " + media);
+	}
+
+	static void q25 () {
+		System.out.print("Ano atual: ");
+		int anoAtual = sc.nextInt();
+		System.out.print("Ano de nascimento: ");
+		int anoNascimento = sc.nextInt();
+
+		if ((anoAtual - anoNascimento) < 16) System.out.println("Não poderá votar");
+		else System.out.println("Poderá votar");
+	}
+
+	static void q26 () {
+		System.out.print("Valor 1: ");
+		int valor1 = sc.nextInt();
+		System.out.print("Valor 2: ");
+		int valor2 = sc.nextInt();
+		if (valor2 == valor1) {
+			System.out.format("Nao pode repetir valor\nValor 2: ");
+			valor2 = sc.nextInt();
+		}
+
+		if (valor1 > valor2) System.out.println("Maior: " + valor1);
+		else System.out.println("Maior: " + valor2);
+	}
+
+	static void q27 () {
+		System.out.print("Valor 1: ");
+		int valor1 = sc.nextInt();
+		System.out.print("Valor 2: ");
+		int valor2 = sc.nextInt();
+		List<Integer> valors = new ArrayList<>();
+		valors.add(valor1);
+		valors.add(valor2);
+		Collections.sort(valors);
+		System.out.println("Lista : " + valors);
+	}
+
+	static void q28 () {
+		System.out.print("Hora inicio: ");
+		int horaInicio = sc.nextInt();
+		System.out.print("Hora final: ");
+		int horaFinal = sc.nextInt();
+
+		int horaTotal = horaFinal - horaInicio;
+
+		if (horaTotal < 0) horaTotal += 24;
+
+		System.out.println("Hora total: " + horaTotal + " horas");
+	}
+
+	static void q29 () {
+		System.out.print("Numero de horas trabalhadas no mes: ");
+		int horaTrabalhada = sc.nextInt();
+		System.out.print("Salario por horas: ");
+		int salarioHora = sc.nextInt();
+		double horaSemanal = horaTrabalhada / 4;
+		double salarioTotal;
+		if (horaSemanal > 40) {
+			salarioHora += salarioHora * 0.5;
+			salarioTotal = salarioHora * horaTrabalhada;
+		}
+		salarioTotal = horaTrabalhada * salarioHora;
+
+		System.out.println("Salario total: " + salarioTotal);
+	}
+
+	static void q30 () {
+		System.out.print("Nome: ");
+		String nome = sc.next();
+		System.out.print("Altura: ");
+		double altura = sc.nextDouble();
+		System.out.print("Sexo [M/F]: ");
+		String sexo = sc.next();
+		double pesoIdeal = 0;
+
+		if (sexo.equals("M") || sexo.equals("m")) pesoIdeal = (72.7 * altura) - 58;
+		else pesoIdeal = (62.1 * altura) - 44.7;
+
+		System.out.println("Peso ideal: " + pesoIdeal);
 	}
 }
