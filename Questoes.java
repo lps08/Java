@@ -6,7 +6,7 @@ public class Questoes {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		q22();
+		q24();
 	}
 	
 	static void q1 () {
@@ -29,7 +29,6 @@ public class Questoes {
 		double litro = sc.nextDouble();
 		
 		System.out.println("Consumo: " + (km / litro));		
-		
 		
 	}
 	
@@ -92,8 +91,10 @@ public class Questoes {
 	static void q9 () {
 		System.out.print("Custo carro: ");
 		double custoCarro = sc.nextDouble();
-
-		System.out.println("Preço final: " + (custoCarro + (custoCarro * 0.73)));
+		//ERRADO
+		custoCarro += custoCarro * 0.28;
+		custoCarro += custoCarro * 0.45;
+		System.out.println("Preço final: " + custoCarro);
 	}
 
 	static void q10 () {
@@ -258,5 +259,27 @@ public class Questoes {
 		double valor = sc.nextDouble();
 		if (valor > 0) System.out.println("Positivo");
 		else System.out.println("Negativo");
-	}	
+	}
+
+	static void q23 ()	{
+		System.out.print("Numero de maçãs: ");
+		int numMaca = sc.nextInt();
+		double preco;
+		if (numMaca < 12) preco = 1.30 * numMaca;
+		else  preco = 1.00 * numMaca;
+		System.out.println("Preço: " + preco);
+	}
+
+	static void q24 () {
+		System.out.print("Nota 1: ");
+		double nota1 = sc.nextDouble();
+		System.out.print("Nota 2: ");
+		double nota2 = sc.nextDouble();
+
+		double media = (nota1 + nota2)/2;
+
+		if (media < 6) System.out.println("Reprovado");
+		else System.out.println("Aprovado");
+		System.out.println("Media: " + media);
+	}
 }
