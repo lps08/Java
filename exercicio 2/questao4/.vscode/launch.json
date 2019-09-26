@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Questao4",
+            "request": "launch",
+            "mainClass": "app.Questao4",
+            "projectName": "questao4"
+        }
+    ]
+}
