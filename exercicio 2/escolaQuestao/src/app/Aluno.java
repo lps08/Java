@@ -37,10 +37,4 @@ public class Aluno {
     public int getIdade () {
         return idade;
     }
-
-    public void infoAluno () {
-        System.out.println("Nome: " + nome);
-        System.out.println("Matricula: " + matricula);
-        System.out.println("Idade: " + idade);
-    }
 }

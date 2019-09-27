@@ -47,13 +47,4 @@ public class Disciplina {
     public Turno getTurno () {
         return turno;
     }
-
-    public void infoDisciplina () {
-        System.out.println("Nome: " + nome);
-        System.out.println("Carga Horaria" + cargaHoraria);
-        System.out.println("Periodo: " + periodo);
-        if (turno == Turno.MANHA) System.out.println("Turno: Manhã");
-        else if (turno == Turno.TARDE) System.out.println("Turno: Tarde");
-        else System.out.println("Turno: Noite");
-    }
 }

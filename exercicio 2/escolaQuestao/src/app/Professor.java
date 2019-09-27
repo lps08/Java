@@ -39,11 +39,4 @@ public class Professor extends Disciplina {
     public Disciplina getDisciplina () {
         return disciplina;
     }
-
-    public void infoProfessor () {
-        System.out.println("Nome: " + nome);
-        System.out.println("Matricula: " + matricula);
-        System.out.println("Disciplina: " + disciplina.getNome());
-    }
-
 }
