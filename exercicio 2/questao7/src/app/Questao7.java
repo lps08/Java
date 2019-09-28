@@ -2,9 +2,9 @@ package app;
 
 public class Questao7 {
     public static void main(String[] args) throws Exception {
-        Estoque estoque1 = new Estoque("Impressora Jato de Tinta", 13, 6);
-        Estoque estoque2 = new Estoque("Monitor LCD 17 polegadas", 11, 13);
-        Estoque estoque3 = new Estoque("Mouse Ótico", 6, 2);
+        UsaEstoque estoque1 = new UsaEstoque("Impressora Jato de Tinta", 13, 6);
+        UsaEstoque estoque2 = new UsaEstoque("Monitor LCD 17 polegadas", 11, 13);
+        UsaEstoque estoque3 = new UsaEstoque("Mouse Ótico", 6, 2);
 
         estoque1.darBaixa(5);
         estoque2.repor(7);
