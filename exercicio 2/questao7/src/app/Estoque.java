@@ -37,4 +37,8 @@ public class Estoque {
     public Boolean precisaRepor () {
         return (qtdAtual <= qtdMinima);
     }
+
+    public void testPrecisaRepor () {
+
+    }
 }
