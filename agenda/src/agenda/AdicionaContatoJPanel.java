@@ -20,7 +20,7 @@ public class AdicionaContatoJPanel extends JPanel implements ActionListener{
 		this.frame = frame;
 		
 		setLayout(new GridLayout(8, 1));
-		setBounds(0, 50, 800, 700);
+		setBounds(0, 50, 830, 400);
 		
 		JLabel label =  new JLabel("Adicione um contato");
 		add(label);
@@ -48,6 +48,10 @@ public class AdicionaContatoJPanel extends JPanel implements ActionListener{
 				ListaContatoPanel.getInstace(frame).addContato(textoNome.getText().toString(), textoCell.getText().toString(), textoEmail.getText().toString());
 				frame.getLayeredPane().moveToFront(ListaContatoPanel.getInstace(frame));
 				frame.getLayeredPane().setComponentZOrder(ListaContatoPanel.getInstace(frame), 0);
+				
+				ListaContatoPanel.getInstace(frame).setVisible(true);
+				AdicionaContatoJPanel.getInstace(frame).setVisible(false);
+				DeletaContatoJPanel.getInstace(frame).setVisible(false);
 			}
 		});
 		add(buttonConfirmar);
@@ -68,5 +72,9 @@ public class AdicionaContatoJPanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		frame.getLayeredPane().moveToFront(AdicionaContatoJPanel.getInstace(frame));
 		frame.getLayeredPane().setComponentZOrder(AdicionaContatoJPanel.getInstace(frame), 0);
+		
+		AdicionaContatoJPanel.getInstace(frame).setVisible(true);
+		DeletaContatoJPanel.getInstace(frame).setVisible(false);
+		ListaContatoPanel.getInstace(frame).setVisible(false);
 	}	
 }

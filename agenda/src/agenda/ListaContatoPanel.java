@@ -21,10 +21,10 @@ public class ListaContatoPanel extends JPanel implements ActionListener{
 		this.frame = frame;
 		
 		setLayout(new GridLayout(2, 1));
-		setBounds(0, 50, 800, 700);
+		setBounds(0, 50, 830, 450);
 		
 		tableModel = new DefaultTableModel();
-		tableModel.addColumn("id");
+		//tableModel.addColumn("idx");
 		tableModel.addColumn("Nome");
 		tableModel.addColumn("Telefone");
 		tableModel.addColumn("Email");
@@ -48,15 +48,21 @@ public class ListaContatoPanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		frame.getLayeredPane().moveToFront(ListaContatoPanel.getInstace(frame));
 		frame.getLayeredPane().setComponentZOrder(ListaContatoPanel.getInstace(frame), 0);
+		
+		ListaContatoPanel.getInstace(frame).setVisible(true);
+		AdicionaContatoJPanel.getInstace(frame).setVisible(false);
+		DeletaContatoJPanel.getInstace(frame).setVisible(false);
+		
 	}
 	
 	public void addContato(String nome, String numero, String email) {
-		tableModel.insertRow(posicao, new Object[] {posicao, nome, numero, email});
+		tableModel.insertRow(posicao, new Object[] {nome, numero, email});
 		posicao += 1;
 	}
 	
-	public void deleteContatp() {
-		tableModel.removeRow(posicao);
+	public void deleteContato(int idxPosicao) {
+		tableModel.removeRow(idxPosicao);
+		
 		posicao -= 1;
 	}
 

@@ -17,7 +17,7 @@ public class MenuPanel extends JPanel{
 	private MenuPanel(JFrame frame) {
 		
 		setLayout(new FlowLayout());
-		setBounds(0, 0, 800, 750);
+		setBounds(0, 0, 830, 500);
 		
 		JLabel label = new JLabel("Agenda");
 		add(label);
@@ -27,13 +27,7 @@ public class MenuPanel extends JPanel{
 		add(buttonAddContato);
 		
 		JButton buttonExcluirContato = new JButton("Excluir contato");
-		buttonAddContato.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+		buttonExcluirContato.addActionListener(DeletaContatoJPanel.getInstace(frame));
 		add(buttonExcluirContato);
 		
 		JButton buttonListaContato = new JButton("Ver lista de contato");
@@ -41,8 +35,20 @@ public class MenuPanel extends JPanel{
 		add(buttonListaContato);
 		
 		JButton buttonSairContato = new JButton("Sair");
+		buttonSairContato.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		add(buttonSairContato);
 		
+		AdicionaContatoJPanel.getInstace(frame).setVisible(false);
+		DeletaContatoJPanel.getInstace(frame).setVisible(false);
+		ListaContatoPanel.getInstace(frame).setVisible(false);
+		
+		setVisible(true);
 		setOpaque(true);
 	}
 	
