@@ -60,9 +60,12 @@ public class ListaContatoPanel extends JPanel implements ActionListener{
 		posicao += 1;
 	}
 	
-	public void deleteContato(int idxPosicao) {
-		tableModel.removeRow(idxPosicao);
-		
+	public void deleteContato(String nome) {
+		for (int i = 0; i < tableModel.getRowCount(); i++) {
+			if (tableModel.getValueAt(i, 0).toString().equals(nome)) {
+				tableModel.removeRow(i);
+			}
+		}
 		posicao -= 1;
 	}
 

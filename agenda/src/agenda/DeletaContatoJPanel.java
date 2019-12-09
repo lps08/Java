@@ -22,18 +22,18 @@ public class DeletaContatoJPanel extends JPanel implements ActionListener {
 		setLayout(new GridLayout(4,1));
 		setBounds(0, 50, 830, 400);
 		
-		JLabel label = new JLabel("Idx para deletar");
+		JLabel label = new JLabel("Nome do contato");
 		add(label);
 		
-		JTextField position = new JTextField();
-		add(position);
+		JTextField nome = new JTextField();
+		add(nome);
 		
 		JButton button = new JButton("Confirmar");
 		button.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ListaContatoPanel.getInstace(frame).deleteContato(Integer.valueOf(position.getText().toString()));
+				ListaContatoPanel.getInstace(frame).deleteContato(nome.getText().toString());
 				
 				frame.getLayeredPane().moveToFront(ListaContatoPanel.getInstace(frame));
 				frame.getLayeredPane().setComponentZOrder(ListaContatoPanel.getInstace(frame), 0);
